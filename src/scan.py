@@ -1,3 +1,4 @@
+import os
 from bluepy.btle import Scanner, DefaultDelegate
 
 
@@ -14,9 +15,9 @@ class ScanDelegate(DefaultDelegate):
 
 scanner = Scanner().withDelegate(ScanDelegate())
 devices = scanner.scan(10.0)
+mac = os.environ.get('MAC_TO_TRACK')
+
 
 for dev in devices:
-    print("Device {} ({}), RSSI={} dB".format(
-        dev.addr, dev.addrType, dev.rssi))
-    for (adtype, desc, value) in dev.getScanData():
-        print("  {} = {}".format(desc, value))
+    if dev.addr == mac:
+        print(dev.rssi)
