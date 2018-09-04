@@ -12,16 +12,10 @@ A raspberry pi with:
 
 # Setup
 
-Install a helper for bluepy
-
-```
-$ sudo apt-get install libglib2.0-dev
-```
-
 Clone this repo to your pi
 
 ```
-$ git clone git@github.com:KReusen/bluetooth-bed-occupancy-sensor.git
+$ git clone https://github.com/KReusen/bluetooth-bed-occupancy-sensor.git
 ```
 
 Open the folder, create a virtual environment, activate it
@@ -32,4 +26,15 @@ $ cd bluetooth-bed-occupancy-sensor
 $ python3 -m venv .env
 $ source .env/bin/activate
 $ pip install -r requirements.txt
+```
+
+Install bluepy from source
+
+```
+$ sudo apt-get install git build-essential libglib2.0-dev
+$ cd src
+$ git clone https://github.com/IanHarvey/bluepy.git
+$ cd bluepy
+$ python setup.py build
+$ sudo python setup.py install
 ```
