@@ -21,18 +21,15 @@ $ sudo apt-get install libglib2.0-dev
 Clone this repo to your pi
 
 ```
-git clone git@github.com:KReusen/bluetooth-bed-occupancy-sensor.git
+$ git clone git@github.com:KReusen/bluetooth-bed-occupancy-sensor.git
 ```
 
 Open the folder, create a virtual environment, activate it
 and install the requirements
 
 ```
-cd bluetooth-bed-occupancy-sensor
-python3 -m venv .env
-source .env/bin/activate
-```
-
-```
-$ sudo pip3 install bluepy
+$ cd bluetooth-bed-occupancy-sensor
+$ python3 -m venv .env
+$ source .env/bin/activate
+$ pip install -r requirements.txt
 ```
