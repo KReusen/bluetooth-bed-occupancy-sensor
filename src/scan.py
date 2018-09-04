@@ -16,6 +16,7 @@ scanner = Scanner().withDelegate(ScanDelegate())
 devices = scanner.scan(10.0)
 
 for dev in devices:
-    print(f"Device {dev.addr} ({dev.addrType}), RSSI={dev.rssi} dB")
+    print("Device {} ({}), RSSI={} dB".format(
+        dev.addr, dev.addrType, dev.rssi))
     for (adtype, desc, value) in dev.getScanData():
-        print(f"  {desc} = {value}")
+        print("  {} = {}".format(desc, value))

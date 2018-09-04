@@ -32,9 +32,15 @@ Install bluepy from source
 
 ```
 $ sudo apt-get install git build-essential libglib2.0-dev
-$ cd src
 $ git clone https://github.com/IanHarvey/bluepy.git
 $ cd bluepy
 $ python setup.py build
 $ sudo python setup.py install
+```
+
+Move bluepy module to correct place and clean up the rest
+
+```
+$ mv bluepy/bluepy/ src/bluepy/
+$ sudo rm -rf bluepy/
 ```
