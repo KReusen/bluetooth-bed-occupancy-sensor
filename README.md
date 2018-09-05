@@ -48,5 +48,5 @@ $ sudo rm -rf bluepy/
 Make bluepy executable with root privileges by any user:
 
 ```
-sudo setcap 'cap_net_raw,cap_net_admin+eip' bluetooth-bed-occupancy-sensor/src/bluepy/bluepy-helper
+sudo setcap 'cap_net_raw,cap_net_admin+eip' src/bluepy/bluepy-helper
 ```
