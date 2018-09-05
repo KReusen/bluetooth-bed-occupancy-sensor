@@ -7,7 +7,7 @@ A raspberry pi positioned under my bed that polls the bluetooth signal strength 
 A raspberry pi with:
 
 - git installed
-- python3 installed
+- python3.6+ installed (see https://www.scivision.co/compile-install-python-beta-raspberry-pi/ )
 - python3-pip installed
 
 # Setup
@@ -43,4 +43,10 @@ Move bluepy module to correct place and clean up the rest
 ```
 $ mv bluepy/bluepy/ src/bluepy/
 $ sudo rm -rf bluepy/
+```
+
+Make bluepy executable with root privileges by any user:
+
+```
+sudo setcap 'cap_net_raw,cap_net_admin+eip' bluetooth-bed-occupancy-sensor/src/bluepy/bluepy-helper
 ```
