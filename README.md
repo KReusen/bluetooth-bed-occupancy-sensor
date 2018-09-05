@@ -48,5 +48,12 @@ $ sudo rm -rf bluepy/
 Make bluepy executable with root privileges by any user:
 
 ```
-sudo setcap 'cap_net_raw,cap_net_admin+eip' src/bluepy/bluepy-helper
+$ sudo setcap 'cap_net_raw,cap_net_admin+eip' src/bluepy/bluepy-helper
+```
+
+# Run
+
+```
+$ cd source
+$ python main.py aa:a1:bb:11:22:22
 ```
