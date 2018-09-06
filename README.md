@@ -1,6 +1,14 @@
 # bluetooth-bed-occupancy-sensor
 
-A raspberry pi positioned under my bed that polls the bluetooth signal strength of my Xiaomi Mi Band.
+A raspberry pi positioned under my bed that polls the bluetooth signal strength of my Xiaomi Mi Band and compares it to a predefined threshold. Every 30 seconds the script will publish a message to a mqtt topic updating the state, ie:
+
+```
+{
+    "bed_occupied": true
+}
+```
+
+In my setup this mqtt message is then picked up by Home Assistant where I use it in a Anti-Snooze feature I built.
 
 # Prerequisites
 
@@ -49,6 +57,12 @@ Make bluepy executable with root privileges by any user:
 
 ```
 $ sudo setcap 'cap_net_raw,cap_net_admin+eip' src/bluepy/bluepy-helper
+```
+
+[Optional] Add your rollbar token to `~/.bashrc` to be able to log errors
+
+```
+export ROLLBAR_TOKEN=abcdefgh
 ```
 
 # Run
