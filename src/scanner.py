@@ -22,6 +22,10 @@ class BLEScanner():
         """
         devices = self._scan_devices()
         rssis = {dev.addr: dev.rssi for dev in devices}
+        distance = rssis.get(mac_address)
+
+        if distance is None:
+            return None
         return abs(rssis.get(mac_address))
 
     def get_average_distance_for_mac(self, mac_address: str, measurements: int = 3) -> Optional[int]:

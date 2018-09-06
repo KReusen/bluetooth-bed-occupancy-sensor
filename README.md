@@ -68,6 +68,6 @@ export ROLLBAR_TOKEN=abcdefgh
 # Run
 
 ```
-$ cd source
+$ cd src
 $ python main.py aa:a1:bb:11:22:22
 ```

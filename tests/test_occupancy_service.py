@@ -19,3 +19,9 @@ class TestOccupancyService:
         distance = 50
         in_range = occupancy_service.in_range(distance)
         assert in_range == True
+
+    def test_in_range_distance_is_none(self):
+        occupancy_service = OccupancyService(threshold=50)
+        distance = None
+        in_range = occupancy_service.in_range(distance)
+        assert in_range == False
